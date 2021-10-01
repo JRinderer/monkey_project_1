@@ -1,7 +1,8 @@
 package token
 
 type TokenType string
-//testing
+
+//testing ability to commit from other PC
 type Token struct {
 	Type TokenType
 	Literal string
