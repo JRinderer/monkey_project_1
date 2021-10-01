@@ -1,7 +1,7 @@
 package token
 
 type TokenType string
-
+//testing
 type Token struct {
 	Type TokenType
 	Literal string
