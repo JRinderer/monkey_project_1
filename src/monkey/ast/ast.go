@@ -1,9 +1,7 @@
 package ast
 
 import (
-	"go/ast"
 	"monkey/token"
-	"text/template/parse"
 )
 
 type Node interface{
@@ -15,10 +13,15 @@ type Statement interface {
 	statementNode()
 }
 
+type Expression interface{
+	Node
+	expressionNode()
+}
+
 type LetStatement struct {
 	Token token.Token
-	Name *parse.Identifier
-	Value Exepression
+	Name *Identifier
+	Value Expression
 }
 
 func (ls *LetStatement) statementNode() {
@@ -40,11 +43,6 @@ func (i *Identifier) expressionNode(){
 
 func (i *Identifier) TokenLiteral() string{
 	return i.Token.Literal
-}
-
-type Exepression interface{
-	Node
-	expressionNode()
 }
 
 type Program struct {
