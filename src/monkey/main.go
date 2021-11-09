@@ -9,7 +9,7 @@ import (
 
 func main(){
 	user, err := user.Current()
-
+	//text
 	if err!=nil{
 		panic(err)
 	}
